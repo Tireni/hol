@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MN Beads - Handcrafted Jewelry Supplies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png">
+    <style>
+        :root {
+            --primary-pink: #ff9bb3;
+            --dark-pink: #e75480;
+            --light-pink: #ffd6e0;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+           
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--black);
+        }
+        
+        /* Welcome Page */
+        .welcome-page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--primary-pink) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .welcome-content {
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .welcome-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+        }
+        
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            font-weight: 500;
+            color: var(--black);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .enter-btn {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .enter-btn:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .bead-decoration {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        .bead-1 {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-pink);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .bead-2 {
+            width: 90px;
+            height: 90px;
+            background-color: var(--dark-pink);
+            bottom: 15%;
+            right: 8%;
+            animation-delay: 1s;
+        }
+        
+        .bead-3 {
+            width: 50px;
+            height: 50px;
+            background-color: var(--black);
+            top: 25%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        /* Main Shop Page */
+        .shop-container {
+            display: none;
+            min-height: 100vh;
+            background-color: var(--white);
+        }
+        
+        .section {
+            padding: 3rem 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--dark-pink);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--black);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light-pink);
+            flex-wrap: wrap;
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            margin: 0.5rem 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--dark-pink);
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .category-btn {
+            background: none;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--black);
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-pink);
+            color: var(--white);
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--light-pink);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--light-pink);
+        }
+        
+        .product-info {
+            padding: 1.2rem;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+            font-size: 1rem;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .product-price {
+            color: var(--dark-pink);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        /* Product Carousel */
+        .carousel-container {
+            position: relative;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .carousel-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+        }
+        
+        .carousel-title i {
+            margin-right: 0.8rem;
+            color: var(--dark-pink);
+        }
+        
+        .products-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 1rem;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .products-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .products-carousel .product-card {
+            flex: 0 0 180px;
+            scroll-snap-align: start;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-ejects: none;
+        }
+        
+        .carousel-btn {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background-color: var(--dark-pink);
+            color: white;
+        }
+        
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 2rem;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .slide-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light-pink);
+        }
+        
+        .slide-text {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #f5f5f5;
+        }
+        
+        .slide-btn {
+            background-color: var(--dark-pink);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-btn:hover {
+            background-color: var(--primary-pink);
+            transform: translateY(-2px);
+        }
+        
+        .slideshow-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .slideshow-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slideshow-dot.active {
+            background-color: var(--dark-pink);
+            transform: scale(1.2);
+        }
+        
+        /* Product Page */
+        .product-page {
+            display: none;
+            min-height: 100vh;
+            padding: 1.5rem;
+            background-color: var(--white);
+        }
+        
+        .back-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--black);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+        }
+        
+        .back-btn:hover {
+            color: var(--dark-pink);
+        }
+        
+        .product-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .product-gallery {
+            width: 100%;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            gap: 0.8rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+        
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid var(--light-pink);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+        
+        .product-content {
+            width: 100%;
+        }
+        
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-price-large {
+            font-size: 1.8rem;
+            color: var(--dark-pink);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .product-description {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .product-meta {
+            margin-bottom: 1.5rem;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+        
+        .meta-item i {
+            margin-right: 0.8rem;
+            color: var(--dark-pink);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .order-btn {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            font-family: 'Raleway', sans-serif;
+            margin-top: 1rem;
+        }
+        
+        .order-btn:hover {
+            background-color: var(--dark-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--light-pink);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .newsletter-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        
+        .newsletter-text {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--dark-pink);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--black);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary-pink);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--primary-pink);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                width: auto;
+                margin-top: 0;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            .products-carousel .product-card {
+                flex: 0 0 220px;
+            }
+            
+            .product-detail {
+                flex-direction: row;
+            }
+            
+            .product-gallery {
+                flex: 1;
+                min-width: 300px;
+            }
+            
+            .product-content {
+                flex: 1;
+                min-width: 300px;
+                padding-left: 2rem;
+            }
+            
+            .main-image {
+                height: 400px;
+            }
+            
+            .thumbnail-container {
+                overflow-x: visible;
+                flex-wrap: wrap;
+            }
+            
+            .order-btn {
+                width: auto;
+            }
+            
+            .slideshow {
+                height: 500px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section {
+                padding: 5rem 3rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div class="welcome-page" id="welcomePage">
+        <div class="bead-decoration bead-1"></div>
+        <div class="bead-decoration bead-2"></div>
+        <div class="bead-decoration bead-3"></div>
+        <div class="welcome-content">
+            <h1 class="welcome-title">Welcome to MN Beads</h1>
+            <p class="welcome-subtitle">Discover our exquisite collection of high-quality beads for all your jewelry making needs</p>
+            <button class="enter-btn" id="enterBtn">Enter Shop</button>
+        </div>
+    </div>
+    
+    <!-- Main Shop Page -->
+    <div class="shop-container" id="shopContainer">
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="MN Beads Logo" class="logo-img">
+                <span class="logo-text">MN Beads</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">Collections</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        
+        <!-- Slideshow Banner -->
+        <div class="slideshow">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/berrybeadbag.jpg')">
+                <div class="slide-content">
+                    <h2 class="slide-title">Summer Collection</h2>
+                    <p class="slide-text">Discover our vibrant summer bead collection perfect for your seasonal creations</p>
+                    <button class="slide-btn">Shop Now</button>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/crystallovebag.jpg')">
+                <div class="slide-content">
+                    <h2 class="slide-title">New Arrivals</h2>
+                    <p class="slide-text">Explore our latest bead selections just arrived this week</p>
+                    <button class="slide-btn">View New Items</button>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/shacklesbag.jpg')">
+                <div class="slide-content">
+                    <h2 class="slide-title">Premium Collection</h2>
+                    <p class="slide-text">Elevate your designs with our luxurious premium collection</p>
+                    <button class="slide-btn">Browse Collection</button>
+                </div>
+            </div>
+            <div class="slideshow-nav">
+                <div class="slideshow-dot active"></div>
+                <div class="slideshow-dot"></div>
+                <div class="slideshow-dot"></div>
+            </div>
+        </div>
+        
+        <!-- Featured Products -->
+        <section class="section">
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Our most popular and highly rated bead collections</p>
+            
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="bags">Bead Bags</button>
+                <button class="category-btn" data-category="neckpieces">Neckpieces</button>
+                <button class="category-btn" data-category="charms">Charms</button>
+                <button class="category-btn" data-category="bracelets">Bracelets</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-id="1" data-category="bags">
+                    <img src="assets/berrybeadbag.jpg" alt="Berry Bead Bag" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Berry Bead Bag</h3>
+                        <p class="product-price">NGN 26,000</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="2" data-category="bags">
+                    <img src="assets/crystallovebag.jpg" alt="Crystal Love Bag" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Crystal Love Bag</h3>
+                        <p class="product-price">NGN 43,500</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="3" data-category="bags">
+                    <img src="assets/shacklesbag.jpg" alt="Shackles Bag" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Shackles Bag</h3>
+                        <p class="product-price">NGN 47,500</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="4" data-category="neckpieces">
+                    <img src="assets/gemstoneunisex.jpg" alt="Gemstone Unisex Neckpiece" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Gemstone Unisex Neckpiece</h3>
+                        <p class="product-price">NGN 15,000</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="5" data-category="charms">
+                    <img src="assets/phonecharms.jpg" alt="Phone Charms" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Phone Charms</h3>
+                        <p class="product-price">NGN 2,500</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="6" data-category="bags">
+                    <img src="assets/sugarbeadbag.jpg" alt="Sugar Bead Bag" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Sugar Bead Bag</h3>
+                        <p class="product-price">NGN 22,000</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="7" data-category="bags">
+                    <img src="assets/caribbeanbeadbag.jpg" alt="Caribbean Bead Bag" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Caribbean Bead Bag</h3>
+                        <p class="product-price">NGN 26,000</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-id="8" data-category="bracelets">
+                    <img src="assets/acrylicbracelets.jpg" alt="Acrylic Bracelets" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name">Acrylic Bracelets</h3>
+                        <p class="product-price">NGN 2,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trending Products Carousel -->
+        <section class="section" style="background-color: var(--gray);">
+            <h2 class="section-title">Trending Now</h2>
+            <p class="section-subtitle">Discover what's popular this season</p>
+            
+            <div class="carousel-container">
+                <div class="products-carousel" id="trendingCarousel">
+                    <div class="product-card" data-id="1" data-category="bags">
+                        <img src="assets/berrybeadbag.jpg" alt="Berry Bead Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Berry Bead Bag</h3>
+                            <p class="product-price">NGN 26,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="2" data-category="bags">
+                        <img src="assets/crystallovebag.jpg" alt="Crystal Love Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Crystal Love Bag</h3>
+                            <p class="product-price">NGN 43,500</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="3" data-category="bags">
+                        <img src="assets/shacklesbag.jpg" alt="Shackles Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Shackles Bag</h3>
+                            <p class="product-price">NGN 47,500</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="4" data-category="neckpieces">
+                        <img src="assets/gemstoneunisex.jpg" alt="Gemstone Unisex Neckpiece" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Gemstone Neckpiece</h3>
+                            <p class="product-price">NGN 15,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="5" data-category="charms">
+                        <img src="assets/phonecharms.jpg" alt="Phone Charms" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Phone Charms</h3>
+                            <p class="product-price">NGN 2,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="trendingPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn" id="trendingNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New Releases Carousel -->
+        <section class="section">
+            <h2 class="section-title">New Releases</h2>
+            <p class="section-subtitle">Fresh additions to our collection</p>
+            
+            <div class="carousel-container">
+                <div class="products-carousel" id="newReleasesCarousel">
+                    <div class="product-card" data-id="6" data-category="bags">
+                        <img src="assets/sugarbeadbag.jpg" alt="Sugar Bead Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Sugar Bead Bag</h3>
+                            <p class="product-price">NGN 22,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="7" data-category="bags">
+                        <img src="assets/caribbeanbeadbag.jpg" alt="Caribbean Bead Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Caribbean Bead Bag</h3>
+                            <p class="product-price">NGN 26,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="8" data-category="bracelets">
+                        <img src="assets/acrylicbracelets.jpg" alt="Acrylic Bracelets" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Acrylic Bracelets</h3>
+                            <p class="product-price">NGN 2,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="9" data-category="waistbeads">
+                        <img src="assets/waistbeads.jpg" alt="3 Sets Waistbeads" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">3 Sets Waistbeads</h3>
+                            <p class="product-price">NGN 7,500</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="10" data-category="bags">
+                        <img src="assets/sugarbag.jpg" alt="Sugar Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Sugar Bag</h3>
+                            <p class="product-price">NGN 12,500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="newReleasesPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn" id="newReleasesNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seasonal Collection -->
+        <section class="section" style="background-color: var(--gray);">
+            <h2 class="section-title">Summer Collection</h2>
+            <p class="section-subtitle">Bright and vibrant beads perfect for your summer creations</p>
+            
+            <div class="carousel-container">
+                <div class="products-carousel" id="summerCarousel">
+                    <div class="product-card" data-id="1" data-category="bags">
+                        <img src="assets/berrybeadbag.jpg" alt="Berry Bead Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Berry Bead Bag</h3>
+                            <p class="product-price">NGN 26,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="7" data-category="bags">
+                        <img src="assets/caribbeanbeadbag.jpg" alt="Caribbean Bead Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Caribbean Bead Bag</h3>
+                            <p class="product-price">NGN 26,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="11" data-category="bags">
+                        <img src="assets/multicoloredcupbag.jpg" alt="Multicolored Cup Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Multicolored Cup Bag</h3>
+                            <p class="product-price">NGN 20,000</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="12" data-category="bags">
+                        <img src="assets/bottegavenettabag.jpg" alt="Bottega Venetta Bag" class="product-image">
+                        <div class="product-info">
+                            <h3 class="product-name">Bottega Venetta Bag</h3>
+                            <p class="product-price">NGN 23,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" id="summerPrev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn" id="summerNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2 class="newsletter-title">Join Our Newsletter</h2>
+            <p class="newsletter-text">Subscribe to get updates on new products, exclusive offers, and jewelry-making tips</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-logo">MN Beads</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Home</a>
+                <a href="#" class="footer-link">Shop</a>
+                <a href="#" class="footer-link">Collections</a>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Contact</a>
+                <a href="#" class="footer-link">Shipping Policy</a>
+                <a href="#" class="footer-link">Returns</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <p class="copyright">© 2023 MN Beads. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- Product Detail Page -->
+    <div class="product-page" id="productPage">
+        <button class="back-btn" id="backBtn"><i class="fas fa-arrow-left"></i> Back to Shop</button>
+        
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="assets/berrybeadbag.jpg" alt="Berry Bead Bag" class="main-image" id="mainImage">
+                <div class="thumbnail-container">
+                    <img src="assets/berrybeadbag.jpg" alt="Thumbnail 1" class="thumbnail">
+                    <img src="assets/berrybeadbag.jpg" alt="Thumbnail 2" class="thumbnail">
+                    <img src="assets/berrybeadbag.jpg" alt="Thumbnail 3" class="thumbnail">
+                </div>
+            </div>
+            
+            <div class="product-content">
+                <h1 class="product-title" id="productTitle">Berry Bead Bag</h1>
+                <p class="product-price-large" id="productPrice">NGN 26,000</p>
+                <p class="product-description" id="productDescription">
+                    Our premium Berry Bead Bag features a delightful assortment of high-quality beads in various berry-inspired shades. This collection includes 200 carefully selected beads in sizes ranging from 4mm to 10mm, perfect for creating elegant jewelry pieces. The beads have a beautiful translucent finish that catches the light beautifully, with smooth edges for comfortable wear. The set includes round, oval, and teardrop shapes that work well with both silver and gold findings. Ideal for creating necklaces, bracelets, or earrings with a fruity, feminine touch.
+                </p>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Premium Quality Glass Beads</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>Sizes: 4mm - 10mm</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-palette"></i>
+                        <span>Berry Color Palette</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Free shipping on orders over NGN 50,000</span>
+                    </div>
+                </div>
+                
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const welcomePage = document.getElementById('welcomePage');
+        const enterBtn = document.getElementById('enterBtn');
+        const shopContainer = document.getElementById('shopContainer');
+        const productPage = document.getElementById('productPage');
+        const backBtn = document.getElementById('backBtn');
+        const productCards = document.querySelectorAll('.product-card');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productsGrid = document.getElementById('productsGrid');
+        
+        // Slideshow Elements
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slideshow-dot');
+        let currentSlide = 0;
+        
+        // Carousel Elements
+        const trendingCarousel = document.getElementById('trendingCarousel');
+        const newReleasesCarousel = document.getElementById('newReleasesCarousel');
+        const summerCarousel = document.getElementById('summerCarousel');
+        
+        // Product data
+        const products = {
+            1: {
+                title: "Berry Bead Bag",
+                price: "NGN 26,000",
+                description: "Our premium Berry Bead Bag features a delightful assortment of high-quality beads in various berry-inspired shades. This collection includes 200 carefully selected beads in sizes ranging from 4mm to 10mm, perfect for creating elegant jewelry pieces. The beads have a beautiful translucent finish that catches the light beautifully, with smooth edges for comfortable wear. The set includes round, oval, and teardrop shapes that work well with both silver and gold findings. Ideal for creating necklaces, bracelets, or earrings with a fruity, feminine touch.",
+                mainImage: "assets/berrybeadbag.jpg",
+                thumbnails: [
+                    "assets/berrybeadbag.jpg",
+                    "assets/berrybeadbag2.jpg",
+                    "assets/berrybeadbag3.jpg"
+                ]
+            },
+            2: {
+                title: "Crystal Love Bag",
+                price: "NGN 43,500",
+                description: "The Crystal Love Bag is a luxurious collection of premium crystal beads that add sparkle to any jewelry design. This set includes 150 high-quality crystals in various shapes (round, bicone, and teardrop) and sizes (4mm-8mm). The crystals feature a special AB (aurora borealis) coating that creates a rainbow effect when light hits them. Perfect for creating elegant evening wear jewelry, wedding accessories, or adding glamorous touches to everyday pieces. The crystals are durable and resistant to tarnishing, ensuring your creations maintain their brilliance.",
+                mainImage: "assets/crystallovebag.jpg",
+                thumbnails: [
+                    "assets/crystallovebag.jpg",
+                    "assets/crystallovebag.jpg",
+                    "assets/crystallovebag.jpg"
+                ]
+            },
+            3: {
+                title: "Shackles Bag",
+                price: "NGN 47,500",
+                description: "Our exclusive Shackles Bag is a unique collection featuring 100 premium beads with a distinctive shackle design. These beads are made from high-quality alloy with a polished finish that resists tarnishing. The set includes beads in silver, gold, and rose gold tones, each measuring approximately 8mm. Perfect for creating bold, contemporary jewelry pieces with an edgy aesthetic. The beads work particularly well for statement necklaces, charm bracelets, or as accents in beaded designs. Each bead has a substantial weight that gives jewelry a luxurious feel.",
+                mainImage: "assets/shacklesbag.jpg",
+                thumbnails: [
+                    "assets/shacklesbag.jpg",
+                    "assets/shacklesbag2.jpg",
+                    "assets/shacklesbag3.jpg"
+                ]
+            },
+            4: {
+                title: "Gemstone Unisex Neckpiece",
+                price: "NGN 15,000",
+                description: "This versatile Gemstone Unisex Neckpiece features a carefully curated selection of natural semi-precious stones. The 18-inch necklace includes a mix of agate, jasper, and quartz beads in earthy tones that appeal to all genders. Each stone is approximately 6-8mm in diameter, strung on a durable elastic cord with a secure knotting technique. The natural variations in the stones ensure each piece is unique. Perfect for everyday wear, this neckpiece combines style with the believed metaphysical properties of natural gemstones.",
+                mainImage: "assets/gemstoneunisex.jpg",
+                thumbnails: [
+                    "assets/gemstoneunisex.jpg",
+                    "assets/gemstoneunisex.jpg",
+                    "assets/gemstoneunisex.jpg"
+                ]
+            },
+            5: {
+                title: "Phone Charms",
+                price: "NGN 2,500",
+                description: "Add personality to your devices with our adorable Phone Charms collection. This set includes 10 assorted charms featuring cute designs like hearts, stars, animals, and popular symbols. Each charm measures approximately 1-2cm and comes with a secure metal connector that fits most phone cases with charm holes. Made from durable acrylic with vibrant colors that won't fade, these charms are perfect for personalizing your smartphone, tablet, or keys. Mix and match to create your own unique style or give as fun gifts to friends and family.",
+                mainImage: "assets/phonecharms.jpg",
+                thumbnails: [
+                    "assets/phonecharms.jpg",
+                    "assets/phonecharms.jpg",
+                    "assets/phonecharms.jpg"
+                ]
+            },
+            6: {
+                title: "Sugar Bead Bag",
+                price: "NGN 22,000",
+                description: "Our Sugar Bead Bag offers a sweet collection of 250 pastel-colored beads that resemble sugary candies. The beads come in soft pink, mint, lavender, and baby blue shades with a matte finish that gives them a delicate appearance. Sizes range from 4mm to 8mm in round and oval shapes. Made from high-quality resin that's lightweight yet durable, these beads are perfect for creating feminine, romantic jewelry pieces. The set includes coordinating colors that work beautifully together for multi-strand designs or as accents in more complex pieces.",
+                mainImage: "assets/sugarbeadbag.jpg",
+                thumbnails: [
+                    "assets/sugarbeadbag.jpg",
+                    "assets/sugarbeadbag.jpg",
+                    "assets/sugarbeadbag.jpg"
+                ]
+            },
+            7: {
+                title: "Caribbean Bead Bag",
+                price: "NGN 26,000",
+                description: "Bring tropical vibes to your designs with our Caribbean Bead Bag. This vibrant collection includes 200 beads inspired by the colors of the Caribbean sea - turquoise, coral, sunshine yellow, and palm green. The beads feature a glossy finish that enhances their bright colors and a variety of shapes including rounds, tubes, and cubes (6-10mm). Made from durable glass, these beads are perfect for creating statement summer jewelry, beach wedding accessories, or adding pops of color to any design. The set includes enough beads for multiple projects.",
+                mainImage: "assets/caribbeanbeadbag.jpg",
+                thumbnails: [
+                    "assets/caribbeanbeadbag.jpg",
+                    "assets/caribbeanbeadbag.jpg",
+                    "assets/caribbeanbeadbag.jpg"
+                ]
+            },
+            8: {
+                title: "Acrylic Bracelets",
+                price: "NGN 2,000",
+                description: "Our Acrylic Bracelets are fun, lightweight accessories that add color to any outfit. Each bracelet measures approximately 7 inches in diameter with a stretchy elastic band for comfortable wear. Available in a variety of vibrant colors and patterns including solids, stripes, and marbled effects. The acrylic beads are smooth and lightweight, making these bracelets perfect for stacking or wearing alone. Great for everyday wear, parties, or as gifts. Each order includes one bracelet - mix and match colors to create your own unique combination.",
+                mainImage: "assets/acrylicbracelets.jpg",
+                thumbnails: [
+                    "assets/acrylicbracelets.jpg",
+                    "assets/acrylicbracelets.jpg",
+                    "assets/acrylicbracelets.jpg"
+                ]
+            },
+            9: {
+                title: "3 Sets Waistbeads",
+                price: "NGN 7,500",
+                description: "This beautiful set includes three complete waistbead strands in coordinating colors. Each strand measures approximately 32 inches long (adjustable) and features a mix of glass beads, crystals, and spacers for visual interest. The strands can be worn together for a layered look or separately. Colors include traditional African-inspired combinations as well as contemporary palettes. Waistbeads are traditionally worn for adornment, body shaping, and cultural significance. The strands are strung on durable nylon thread with secure knots between each bead for longevity.",
+                mainImage: "assets/waistbeads.jpg",
+                thumbnails: [
+                    "assets/waistbeads.jpg",
+                    "assets/waistbeads.jpg",
+                    "assets/waistbeads.jpg"
+                ]
+            },
+            10: {
+                title: "Sugar Bag",
+                price: "NGN 12,500",
+                description: "The Sugar Bag is a sweet collection of 150 delicate beads in creamy white and soft pastel shades. These beads have a subtle sparkle finish that catches the light beautifully, resembling grains of sugar. Sizes range from 3mm to 6mm in round and oval shapes. Made from high-quality glass, these versatile beads work well for creating elegant bridal jewelry, baby accessories, or adding delicate accents to any design. The neutral color palette makes them easy to combine with other beads or wear alone for a minimalist look.",
+                mainImage: "assets/sugarbag.jpg",
+                thumbnails: [
+                    "assets/sugarbag.jpg",
+                    "assets/sugarbag.jpg",
+                    "assets/sugarbag.jpg"
+                ]
+            },
+            11: {
+                title: "Multicolored Cup Bag",
+                price: "NGN 20,000",
+                description: "Our Multicolored Cup Bag contains 300 assorted beads in every color of the rainbow. This comprehensive collection includes a mix of round, cube, and tube shapes in sizes from 4mm to 8mm. The beads have a glossy finish that enhances their vibrant colors. Perfect for children's crafts, educational projects, or creating colorful jewelry designs. The variety ensures you'll always have the right color for any project. Beads are made from durable acrylic that's lightweight yet sturdy enough for repeated use in jewelry making.",
+                mainImage: "assets/multicoloredcupbag.jpg",
+                thumbnails: [
+                    "assets/multicoloredcupbag.jpg",
+                    "assets/multicoloredcupbag.jpg",
+                    "assets/multicoloredcupbag.jpg"
+                ]
+            },
+            12: {
+                title: "Bottega Venetta Bag",
+                price: "NGN 23,000",
+                description: "Inspired by luxury fashion, our Bottega Venetta Bag features 180 high-end beads in rich, sophisticated colors. This collection includes matte and glossy finishes in deep greens, browns, blacks, and creams. The beads range from 5mm to 10mm in various shapes including rounds, ovals, and unique geometric cuts. Made from premium materials that mimic the look of luxury accessories, these beads are perfect for creating elegant, fashion-forward jewelry pieces. The neutral color palette works year-round and pairs beautifully with both gold and silver findings.",
+                mainImage: "assets/bottegavenettabag.jpg",
+                thumbnails: [
+                    "assets/bottegavenettabag.jpg",
+                    "assets/bottegavenettabag.jpg",
+                    "assets/bottegavenettabag.jpg"
+                ]
+            }
+        };
+        
+        // Event Listeners
+        enterBtn.addEventListener('click', () => {
+            welcomePage.style.display = 'none';
+            shopContainer.style.display = 'block';
+            shopContainer.classList.add('fade-in');
+        });
+        
+        backBtn.addEventListener('click', () => {
+            productPage.style.display = 'none';
+            shopContainer.style.display = 'block';
+        });
+        
+        // Category filtering
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                const allProducts = document.querySelectorAll('.product-card');
+                
+                if (category === 'all') {
+                    allProducts.forEach(product => {
+                        product.style.display = 'block';
+                    });
+                } else {
+                    allProducts.forEach(product => {
+                        if (product.dataset.category === category) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Product card clicks
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const productId = card.getAttribute('data-id');
+                const product = products[productId];
+                
+                if (product) {
+                    document.getElementById('productTitle').textContent = product.title;
+                    document.getElementById('productPrice').textContent = product.price;
+                    document.getElementById('productDescription').textContent = product.description;
+                    document.getElementById('mainImage').src = product.mainImage;
+                    
+                    // Update thumbnails
+                    const thumbnailContainer = document.querySelector('.thumbnail-container');
+                    thumbnailContainer.innerHTML = '';
+                    product.thumbnails.forEach(thumb => {
+                        const img = document.createElement('img');
+                        img.src = thumb;
+                        img.className = 'thumbnail';
+                        img.addEventListener('click', () => {
+                            document.getElementById('mainImage').src = thumb;
+                        });
+                        thumbnailContainer.appendChild(img);
+                    });
+                    
+                    shopContainer.style.display = 'none';
+                    productPage.style.display = 'block';
+                    productPage.classList.add('fade-in');
+                }
+            });
+        });
+        
+        // Thumbnail click functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('mainImage');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    mainImage.src = thumb.src;
+                });
+            });
+        });
+        
+        // Slideshow functionality
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Set up slide navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Auto-advance slides
+        setInterval(nextSlide, 5000);
+        
+        // Carousel navigation
+        function setupCarousel(carousel, prevBtn, nextBtn) {
+            const scrollAmount = 220; // Width of product card + gap
+            
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        setupCarousel(trendingCarousel, 
+                    document.getElementById('trendingPrev'), 
+                    document.getElementById('trendingNext'));
+        
+        setupCarousel(newReleasesCarousel, 
+                    document.getElementById('newReleasesPrev'), 
+                    document.getElementById('newReleasesNext'));
+        
+        setupCarousel(summerCarousel, 
+                    document.getElementById('summerPrev'), 
+                    document.getElementById('summerNext'));
+    </script>
+</body>
+</html>
