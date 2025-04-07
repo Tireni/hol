@@ -307,57 +307,6 @@
             color: var(--primary-brown);
         }
         
-        .cart-icon {
-            position: relative;
-            font-size: 1.2rem;
-            cursor: pointer;
-            margin-left: 1.5rem;
-        }
-        
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--primary-brown);
-            color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-        
-        .categories {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .category-btn {
-            background: none;
-            border: 1px solid var(--light-brown);
-            padding: 0.6rem 1.5rem;
-            cursor: pointer;
-            font-weight: 500;
-            color: var(--black);
-            transition: all 0.3s ease;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
-        }
-        
-        .category-btn.active, .category-btn:hover {
-            background-color: var(--primary-brown);
-            color: var(--white);
-            border-color: var(--primary-brown);
-        }
-        
         /* Products Grid */
         .products-grid {
             display: grid;
@@ -442,79 +391,6 @@
             color: #999;
             font-size: 0.9rem;
             font-weight: 500;
-        }
-        
-        /* Product Carousel */
-        .carousel-container {
-            position: relative;
-            margin: 2rem 0;
-            overflow: hidden;
-        }
-        
-        .carousel-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            color: var(--black);
-            display: flex;
-            align-items: center;
-            letter-spacing: 1px;
-        }
-        
-        .carousel-title i {
-            margin-right: 0.8rem;
-            color: var(--primary-brown);
-        }
-        
-        .products-carousel {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding: 1rem;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-        }
-        
-        .products-carousel::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        
-        .products-carousel .product-card {
-            flex: 0 0 250px;
-            scroll-snap-align: start;
-        }
-        
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            pointer-events: none;
-        }
-        
-        .carousel-btn {
-            background-color: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            pointer-events: auto;
-            transition: all 0.3s ease;
-            color: var(--primary-brown);
-        }
-        
-        .carousel-btn:hover {
-            background-color: var(--primary-brown);
-            color: white;
         }
         
         /* Slideshow */
@@ -815,48 +691,6 @@
             border-radius: 5px;
         }
         
-        .order-btn {
-            background-color: var(--primary-brown);
-            color: var(--white);
-            border: none;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 300px;
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 1rem;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .order-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--pink-accent);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: -1;
-        }
-        
-        .order-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            color: var(--black);
-        }
-        
-        .order-btn:hover::before {
-            left: 0;
-        }
-        
         .buy-now-btn {
             background-color: var(--pink-accent);
             color: var(--black);
@@ -919,67 +753,6 @@
             width: 100%;
         }
         
-        /* Newsletter */
-        .newsletter {
-            background-color: var(--primary-brown);
-            padding: 3rem 1.5rem;
-            text-align: center;
-            margin-top: 2rem;
-            color: var(--white);
-        }
-        
-        .newsletter-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-        
-        .newsletter-text {
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 30px;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .newsletter-btn {
-            background-color: var(--white);
-            color: var(--primary-brown);
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
-        }
-        
-        .newsletter-btn:hover {
-            background-color: var(--pink-accent);
-            color: var(--black);
-            transform: translateY(-2px);
-        }
-        
         /* Footer */
         .footer {
             background-color: var(--primary-brown);
@@ -1038,205 +811,6 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Cart Page */
-        .cart-page {
-            display: none;
-            min-height: 100vh;
-            padding: 2rem 1.5rem;
-            background-color: var(--white);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .cart-container {
-            width: 100%;
-        }
-        
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--light-brown);
-        }
-        
-        .cart-title {
-            font-size: 2rem;
-            margin-bottom: 0;
-            color: var(--black);
-        }
-        
-        .cart-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .cart-items {
-            flex: 2;
-            margin-bottom: 2rem;
-        }
-        
-        .cart-item {
-            display: flex;
-            flex-direction: column;
-            border-bottom: 1px solid var(--light-brown);
-            padding: 1.5rem 0;
-            gap: 1.5rem;
-        }
-        
-        .cart-item-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        
-        .cart-item-details {
-            flex: 1;
-        }
-        
-        .cart-item-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-        
-        .cart-item-price {
-            color: var(--primary-brown);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .cart-item-remove {
-            background: none;
-            border: none;
-            color: #999;
-            cursor: pointer;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            transition: color 0.3s ease;
-        }
-        
-        .cart-item-remove:hover {
-            color: var(--primary-brown);
-        }
-        
-        .cart-summary {
-            background-color: var(--light-brown);
-            padding: 1.5rem;
-            border-radius: 10px;
-            position: sticky;
-            top: 1rem;
-        }
-        
-        .summary-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--black);
-        }
-        
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .summary-total {
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px solid var(--primary-brown);
-            border-bottom: none;
-        }
-        
-        .checkout-btn {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--primary-brown);
-            color: white;
-            border: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-            margin-top: 1.5rem;
-            border-radius: 30px;
-        }
-        
-        .checkout-btn:hover {
-            background-color: var(--pink-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            color: var(--black);
-        }
-        
-        .continue-shopping {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-brown);
-            font-weight: 600;
-            text-align: center;
-            width: 100%;
-            transition: color 0.3s ease;
-        }
-        
-        .continue-shopping:hover {
-            color: var(--black);
-        }
-        
-        .empty-cart-message {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            padding: 3rem 0;
-        }
-        
-        /* Quantity Selector in Cart */
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--light-brown);
-            border: 1px solid var(--light-brown);
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        
-        .quantity-btn:hover {
-            background-color: var(--primary-brown);
-            color: white;
-            border-color: var(--primary-brown);
-        }
-        
-        .quantity-input {
-            width: 50px;
-            text-align: center;
-            padding: 0.5rem;
-            border: 1px solid var(--light-brown);
-            border-radius: 5px;
         }
         
         /* Swipe Section */
@@ -1333,27 +907,6 @@
             color: white;
         }
         
-        /* Cart Notification */
-        .cart-notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary-brown);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .cart-notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
         /* Mobile Menu */
         .mobile-menu {
             position: fixed;
@@ -1399,13 +952,6 @@
         
         .mobile-menu-link:hover {
             color: var(--primary-brown);
-        }
-        
-        .mobile-menu-footer {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
         }
         
         /* Animations */
@@ -1459,11 +1005,6 @@
             
             .nav-links {
                 display: none;
-            }
-            
-            .cart-icon {
-                margin-left: auto;
-                margin-right: 1rem;
             }
             
             .slideshow {
@@ -1522,10 +1063,6 @@
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
-            .products-carousel .product-card {
-                flex: 0 0 280px;
-            }
-            
             .product-detail {
                 flex-direction: row;
             }
@@ -1550,7 +1087,7 @@
                 flex-wrap: wrap;
             }
             
-            .order-btn, .buy-now-btn {
+            .buy-now-btn {
                 width: auto;
             }
             
@@ -1572,15 +1109,6 @@
                 flex: 1;
                 padding-left: 2rem;
             }
-            
-            .cart-item {
-                flex-direction: row;
-            }
-            
-            .cart-item-image {
-                width: 200px;
-                height: 200px;
-            }
         }
         
         @media (min-width: 1024px) {
@@ -1596,22 +1124,6 @@
             
             .header {
                 padding: 1.5rem 3rem;
-            }
-            
-            .cart-container {
-                display: flex;
-                gap: 3rem;
-            }
-            
-            .cart-items {
-                flex: 2;
-            }
-            
-            .cart-summary {
-                flex: 1;
-                height: fit-content;
-                position: sticky;
-                top: 120px;
             }
         }
     </style>
@@ -1634,7 +1146,7 @@
     <div class="swipe-section" id="swipeSection">
         <div class="swipe-container">
             <div class="swipe-card" id="swipeCard">
-                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Product" class="swipe-image" id="swipeImage">
+                <img src="https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp" alt="Product" class="swipe-image" id="swipeImage">
                 <div class="swipe-info">
                     <h2 class="swipe-title" id="swipeTitle">Romper Set</h2>
                     <p class="swipe-price" id="swipePrice">₦15,000</p>
@@ -1670,10 +1182,6 @@
                 <a href="#" class="nav-link">Collections</a>
                 <a href="#" class="nav-link">About</a>
                 <a href="#" class="nav-link">Contact</a>
-                <div class="cart-icon" id="cartIcon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
             </div>
         </header>
         
@@ -1696,33 +1204,25 @@
                 <a href="#" class="mobile-menu-link">About</a>
                 <a href="#" class="mobile-menu-link">Contact</a>
             </div>
-            
-            <div class="mobile-menu-footer">
-                <div class="cart-icon" id="mobileCartIcon">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count" id="mobileCartCount">0</span>
-                </div>
-            </div>
         </div>
         
         <!-- Slideshow Banner -->
         <div class="slideshow">
-            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80')">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp')">
                 <div class="slide-content">
                     <h2 class="slide-title">New Collection</h2>
                     <p class="slide-text">Discover our latest activewear designed for comfort and style</p>
                     <button class="slide-btn">Shop Now</button>
                 </div>
             </div>
-            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')">
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://m.media-amazon.com/images/I/61rZbQCR77L._AC_UY1000_.jpg')">
                 <div class="slide-content">
                     <h2 class="slide-title">Best Sellers</h2>
                     <p class="slide-text">Explore our most popular activewear pieces</p>
                     <button class="slide-btn">View Collection</button>
                 </div>
             </div>
-     
-            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp')">
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://image.made-in-china.com/2f0j00VfPoqQEdYWpy/Plus-Size-XL-3PCS-Women-Sportswear-Workout-Clothing-Sport-Leggings-Seamless-Active-Wear-Gym-Fitness-Yoga-Shorts-Sets.webp')">
                 <div class="slide-content">
                     <h2 class="slide-title">Summer Essentials</h2>
                     <p class="slide-text">Lightweight and breathable pieces for your warm weather workouts</p>
@@ -1807,7 +1307,16 @@
                     </div>
                 </div>
                 
-               
+                <div class="footer-column">
+                    <h3 class="footer-column-title">About</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Our Story</a>
+                        <a href="#" class="footer-link">Quality</a>
+                        <a href="#" class="footer-link">Materials</a>
+                        <a href="#" class="footer-link">Careers</a>
+                    </div>
+                </div>
+                
                 <div class="footer-column">
                     <h3 class="footer-column-title">Help</h3>
                     <div class="footer-links">
@@ -1825,7 +1334,7 @@
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/2348118005406" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -1840,11 +1349,9 @@
         
         <div class="product-detail">
             <div class="product-gallery">
-                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Romper Set" class="main-image" id="mainImage">
+                <img src="https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp" alt="Romper Set" class="main-image" id="mainImage">
                 <div class="thumbnail-container">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Thumbnail 1" class="thumbnail active">
-                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Thumbnail 2" class="thumbnail">
-                    <img src="https://images.unsplash.com/photo-1595341595379-cf1cd0fb7fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Thumbnail 3" class="thumbnail">
+                    <img src="https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp" alt="Thumbnail 1" class="thumbnail active">
                 </div>
             </div>
             
@@ -1852,7 +1359,7 @@
                 <h1 class="product-title" id="productTitle">Romper Set</h1>
                 <p class="product-price-large" id="productPrice">₦15,000</p>
                 <p class="product-description" id="productDescription">
-                    Our premium romper set is designed for both comfort and style. Made from high-quality, breathable fabric that wicks away moisture, this set is perfect for your workouts or casual outings. The romper features a flattering fit with adjustable straps and a built-in shelf bra for support. The shorts are lined for comfort and provide full coverage during movement.
+                    Our premium romper set is designed for both comfort and style. Made from high-quality, breathable fabric that wicks away moisture, this set is perfect for your workouts or casual outings.
                 </p>
                 
                 <div class="product-meta">
@@ -1892,44 +1399,7 @@
                     <button class="quantity-btn" id="increaseQty">+</button>
                 </div>
                 
-                <button class="order-btn" id="addToCartBtn">Add to Cart</button>
-                <button class="buy-now-btn" id="buyNowBtn">Buy Now</button>
-                <p id="whatsappNote" style="display: none; margin-top: 1rem; font-size: 0.9rem; color: var(--primary-brown);">WhatsApp redirection will be implemented later</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Cart Page -->
-    <div class="cart-page" id="cartPage">
-        <div class="cart-container">
-           <div class="cart-header">
-                <button class="back-btn" id="backFromCartBtn"><i class="fas fa-arrow-left"></i> Continue Shopping</button>
-            </div>
-        
-            
-            <div class="cart-content">
-                <div class="cart-items" id="cartItems">
-                    <!-- Cart items will be added here dynamically -->
-                    <p class="empty-cart-message">Your cart is empty</p>
-                </div>
-                
-                <div class="cart-summary">
-                    <h2 class="summary-title">Order Summary</h2>
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="cartSubtotal">₦0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Shipping</span>
-                        <span id="cartShipping">Calculated at checkout</span>
-                    </div>
-                    <div class="summary-row summary-total">
-                        <span>Total</span>
-                        <span id="cartTotal">₦0.00</span>
-                    </div>
-                    <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
-                    <a href="#" class="continue-shopping" id="continueShoppingLink">Continue Shopping</a>
-                </div>
+                <button class="buy-now-btn" id="buyNowBtn">Buy Now via WhatsApp</button>
             </div>
         </div>
     </div>
@@ -1940,26 +1410,12 @@
         const enterBtn = document.getElementById('enterBtn');
         const shopContainer = document.getElementById('shopContainer');
         const productPage = document.getElementById('productPage');
-        const cartPage = document.getElementById('cartPage');
         const swipeSection = document.getElementById('swipeSection');
         const exploreCollectionsBtn = document.getElementById('exploreCollectionsBtn');
         const backBtn = document.getElementById('backBtn');
-        const backFromCartBtn = document.getElementById('backFromCartBtn');
         const productCards = document.querySelectorAll('.product-card');
         const categoryBtns = document.querySelectorAll('.category-btn');
         const productsGrid = document.getElementById('productsGrid');
-        const cartIcon = document.getElementById('cartIcon');
-        const mobileCartIcon = document.getElementById('mobileCartIcon');
-        const cartCount = document.getElementById('cartCount');
-        const mobileCartCount = document.getElementById('mobileCartCount');
-        const cartItems = document.getElementById('cartItems');
-        const cartSubtotal = document.getElementById('cartSubtotal');
-        const cartTotal = document.getElementById('cartTotal');
-        const addToCartBtn = document.getElementById('addToCartBtn');
-        const buyNowBtn = document.getElementById('buyNowBtn');
-        const whatsappNote = document.getElementById('whatsappNote');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const continueShoppingLink = document.getElementById('continueShoppingLink');
         const swipeNavLink = document.getElementById('swipeNavLink');
         const mobileSwipeLink = document.getElementById('mobileSwipeLink');
         const swipeCard = document.getElementById('swipeCard');
@@ -1974,14 +1430,12 @@
         const quantityInput = document.getElementById('quantityInput');
         const increaseQty = document.getElementById('increaseQty');
         const decreaseQty = document.getElementById('decreaseQty');
+        const buyNowBtn = document.getElementById('buyNowBtn');
         
         // Slideshow Elements
         const slides = document.querySelectorAll('.slide')
         const dots = document.querySelectorAll('.slideshow-dot');
         let currentSlide = 0;
-        
-        // Shopping cart data
-        let cart = [];
         
         // Current product being viewed/swiped
         let currentProduct = null;
@@ -1993,55 +1447,56 @@
         
         // Product data
         const products = {
-    1: {
-        title: "Romper Set",
-        price: 15000,
-        description: "Our premium romper set is designed for both comfort and style. Made from high-quality, breathable fabric that wicks away moisture, this set is perfect for your workouts or casual outings.",
-        mainImage: "https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp",
-        thumbnails: [
-            "https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp"
-        ],
-        details: [
-            "High-quality, breathable fabric",
-            "Machine wash cold with like colors",
-            "Made in Nigeria",
-            "Model is 5'7\" wearing size Small",
-            "Available in 4 colors"
-        ]
-    },
-    2: {
-        title: "3pc Flare Pants Set",
-        price: 18000,
-        description: "This stylish 3-piece set includes flare pants, a crop top, and a matching jacket. Made from stretchy, breathable fabric that moves with you, perfect for both workouts and casual wear.",
-        mainImage: "https://m.media-amazon.com/images/I/61rZbQCR77L._AC_UY1000_.jpg",
-        thumbnails: [
-            "https://m.media-amazon.com/images/I/61rZbQCR77L._AC_UY1000_.jpg"
-        ],
-        details: [
-            "Stretchy, breathable fabric",
-            "Machine wash cold, line dry",
-            "Made in Nigeria",
-            "Model is 5'8\" wearing size Medium",
-            "Available in 3 colors"
-        ]
-    },
-    3: {
-        title: "3pc Shorts Set",
-        price: 16000,
-        description: "This 3-piece set includes shorts, a sports bra, and a matching jacket. The breathable, stretchy fabric allows for full range of motion while providing comfort and style.",
-        mainImage: "https://image.made-in-china.com/2f0j00VfPoqQEdYWpy/Plus-Size-XL-3PCS-Women-Sportswear-Workout-Clothing-Sport-Leggings-Seamless-Active-Wear-Gym-Fitness-Yoga-Shorts-Sets.webp",
-        thumbnails: [
-            "https://image.made-in-china.com/2f0j00VfPoqQEdYWpy/Plus-Size-XL-3PCS-Women-Sportswear-Workout-Clothing-Sport-Leggings-Seamless-Active-Wear-Gym-Fitness-Yoga-Shorts-Sets.webp"
-        ],
-        details: [
-            "Breathable, stretchy fabric",
-            "Hand wash cold, lay flat to dry",
-            "Made in Nigeria",
-            "Model is 5'6\" wearing size Small",
-            "Available in 3 colors"
-        ]
-    }
-};
+            1: {
+                title: "Romper Set",
+                price: 15000,
+                description: "Our premium romper set is designed for both comfort and style. Made from high-quality, breathable fabric that wicks away moisture, this set is perfect for your workouts or casual outings.",
+                mainImage: "https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp",
+                thumbnails: [
+                    "https://img.kwcdn.com/product/fancy/c1bd87d7-9083-4863-9ac8-132895b4be4d.jpg?imageView2/2/w/800/q/70/format/webp"
+                ],
+                details: [
+                    "High-quality, breathable fabric",
+                    "Machine wash cold with like colors",
+                    "Made in Nigeria",
+                    "Model is 5'7\" wearing size Small",
+                    "Available in 4 colors"
+                ]
+            },
+            2: {
+                title: "3pc Flare Pants Set",
+                price: 18000,
+                description: "This stylish 3-piece set includes flare pants, a crop top, and a matching jacket. Made from stretchy, breathable fabric that moves with you, perfect for both workouts and casual wear.",
+                mainImage: "https://m.media-amazon.com/images/I/61rZbQCR77L._AC_UY1000_.jpg",
+                thumbnails: [
+                    "https://m.media-amazon.com/images/I/61rZbQCR77L._AC_UY1000_.jpg"
+                ],
+                details: [
+                    "Stretchy, breathable fabric",
+                    "Machine wash cold, line dry",
+                    "Made in Nigeria",
+                    "Model is 5'8\" wearing size Medium",
+                    "Available in 3 colors"
+                ]
+            },
+            3: {
+                title: "3pc Shorts Set",
+                price: 16000,
+                description: "This 3-piece set includes shorts, a sports bra, and a matching jacket. The breathable, stretchy fabric allows for full range of motion while providing comfort and style.",
+                mainImage: "https://image.made-in-china.com/2f0j00VfPoqQEdYWpy/Plus-Size-XL-3PCS-Women-Sportswear-Workout-Clothing-Sport-Leggings-Seamless-Active-Wear-Gym-Fitness-Yoga-Shorts-Sets.webp",
+                thumbnails: [
+                    "https://image.made-in-china.com/2f0j00VfPoqQEdYWpy/Plus-Size-XL-3PCS-Women-Sportswear-Workout-Clothing-Sport-Leggings-Seamless-Active-Wear-Gym-Fitness-Yoga-Shorts-Sets.webp"
+                ],
+                details: [
+                    "Breathable, stretchy fabric",
+                    "Hand wash cold, lay flat to dry",
+                    "Made in Nigeria",
+                    "Model is 5'6\" wearing size Small",
+                    "Available in 3 colors"
+                ]
+            }
+        };
+        
         // Initialize swipe products
         function initSwipeProducts() {
             swipeProducts = Object.keys(products).map(id => ({
@@ -2082,109 +1537,6 @@
                 currentSwipeIndex++;
                 loadSwipeProduct();
             }, 500);
-        }
-        
-        // Update cart count
-        function updateCartCount() {
-            const count = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = count;
-            mobileCartCount.textContent = count;
-            cartCount.style.display = count > 0 ? 'flex' : 'none';
-            mobileCartCount.style.display = count > 0 ? 'flex' : 'none';
-        }
-        
-        // Update cart display
-        function updateCartDisplay() {
-            cartItems.innerHTML = '';
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p class="empty-cart-message">Your cart is empty</p>';
-                cartSubtotal.textContent = '₦0.00';
-                cartTotal.textContent = '₦0.00';
-                return;
-            }
-            
-            let subtotal = 0;
-            
-            cart.forEach((item, index) => {
-                const product = products[item.id];
-                subtotal += product.price * item.quantity;
-                
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                cartItemElement.innerHTML = `
-                    <img src="${product.mainImage}" alt="${product.title}" class="cart-item-image">
-                    <div class="cart-item-details">
-                        <h3 class="cart-item-title">${product.title}</h3>
-                        <p class="cart-item-price">₦${product.price.toLocaleString()}</p>
-                        <div class="quantity-selector">
-                            <button class="quantity-btn" data-index="${index}" data-action="decrease">-</button>
-                            <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-index="${index}">
-                            <button class="quantity-btn" data-index="${index}" data-action="increase">+</button>
-                        </div>
-                        <button class="cart-item-remove" data-index="${index}">
-                            <i class="fas fa-trash"></i> Remove
-                        </button>
-                    </div>
-                `;
-                
-                cartItems.appendChild(cartItemElement);
-            });
-            
-            cartSubtotal.textContent = `₦${subtotal.toLocaleString()}`;
-            cartTotal.textContent = `₦${subtotal.toLocaleString()}`;
-        }
-        
-        // Add to cart
-        function addToCart(productId, quantity = 1) {
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += quantity;
-            } else {
-                cart.push({
-                    id: productId,
-                    quantity: quantity
-                });
-            }
-            
-            updateCartCount();
-            updateCartDisplay();
-            
-            // Show a quick confirmation
-            const product = products[productId];
-            const notification = document.createElement('div');
-            notification.className = 'cart-notification';
-            notification.innerHTML = `
-                <span>Added ${product.title} to cart</span>
-            `;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 10);
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 2000);
-        }
-        
-        // Remove from cart
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartCount();
-            updateCartDisplay();
-        }
-        
-        // Update cart item quantity
-        function updateCartItemQuantity(index, quantity) {
-            if (quantity < 1) quantity = 1;
-            cart[index].quantity = quantity;
-            updateCartCount();
-            updateCartDisplay();
         }
         
         // Load product details
@@ -2261,39 +1613,10 @@
             shopContainer.style.display = 'block';
         });
         
-        backFromCartBtn.addEventListener('click', () => {
-            cartPage.style.display = 'none';
-            shopContainer.style.display = 'block';
-        });
-        
-        cartIcon.addEventListener('click', () => {
-            shopContainer.style.display = 'none';
-            productPage.style.display = 'none';
-            swipeSection.style.display = 'none';
-            cartPage.style.display = 'block';
-            updateCartDisplay();
-        });
-        
-        mobileCartIcon.addEventListener('click', () => {
-            shopContainer.style.display = 'none';
-            productPage.style.display = 'none';
-            swipeSection.style.display = 'none';
-            cartPage.style.display = 'block';
-            updateCartDisplay();
-            toggleMobileMenu();
-        });
-        
-        continueShoppingLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            cartPage.style.display = 'none';
-            shopContainer.style.display = 'block';
-        });
-        
         swipeNavLink.addEventListener('click', (e) => {
             e.preventDefault();
             shopContainer.style.display = 'none';
             productPage.style.display = 'none';
-            cartPage.style.display = 'none';
             swipeSection.style.display = 'block';
             initSwipeProducts();
         });
@@ -2302,7 +1625,6 @@
             e.preventDefault();
             shopContainer.style.display = 'none';
             productPage.style.display = 'none';
-            cartPage.style.display = 'none';
             swipeSection.style.display = 'block';
             initSwipeProducts();
             toggleMobileMenu();
@@ -2350,18 +1672,16 @@
             });
         });
         
-        // Add to cart button
-        addToCartBtn.addEventListener('click', () => {
-            const quantity = parseInt(document.querySelector('.quantity-input').value);
-            addToCart(currentProductId, quantity);
-        });
-        
         // Buy now button
         buyNowBtn.addEventListener('click', () => {
-            whatsappNote.style.display = 'block';
-            setTimeout(() => {
-                whatsappNote.style.display = 'none';
-            }, 3000);
+            const product = products[currentProductId];
+            const quantity = parseInt(document.querySelector('.quantity-input').value);
+            const selectedSize = document.querySelector('.size-option.selected').textContent;
+            
+            const message = `Hello HOL Fits! I'd like to purchase:\n\n*${product.title}*\nSize: ${selectedSize}\nQuantity: ${quantity}\nPrice: ₦${product.price.toLocaleString()}\n\nTotal: ₦${(product.price * quantity).toLocaleString()}\n\nPlease let me know how to proceed with payment and delivery.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/2348118005406?text=${encodedMessage}`, '_blank');
         });
         
         // Quantity buttons in product page
@@ -2375,49 +1695,13 @@
             }
         });
         
-        // Checkout button
-        checkoutBtn.addEventListener('click', () => {
-            alert('Checkout functionality would be implemented here!');
-        });
-        
-        // Cart item interactions
+        // Size selection
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('size-option')) {
                 document.querySelectorAll('.size-option').forEach(option => {
                     option.classList.remove('selected');
                 });
                 e.target.classList.add('selected');
-            }
-            
-            // Quantity buttons in cart
-            if (e.target.classList.contains('quantity-btn')) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                const action = e.target.getAttribute('data-action');
-                let quantity = cart[index].quantity;
-                
-                if (action === 'increase') {
-                    quantity++;
-                } else if (action === 'decrease') {
-                    quantity--;
-                }
-                
-                updateCartItemQuantity(index, quantity);
-            }
-            
-            // Remove item from cart
-            if (e.target.classList.contains('cart-item-remove') || e.target.closest('.cart-item-remove')) {
-                const button = e.target.classList.contains('cart-item-remove') ? e.target : e.target.closest('.cart-item-remove');
-                const index = parseInt(button.getAttribute('data-index'));
-                removeFromCart(index);
-            }
-        });
-        
-        // Quantity input changes in cart
-        document.addEventListener('change', (e) => {
-            if (e.target.classList.contains('quantity-input')) {
-                const index = parseInt(e.target.getAttribute('data-index'));
-                const quantity = parseInt(e.target.value);
-                updateCartItemQuantity(index, quantity);
             }
         });
         
